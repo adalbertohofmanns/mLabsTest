@@ -6,6 +6,22 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    port: 587,
+    domain: "sendgrid.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "css4html",
+    password: "v2hLS3411"
+  }
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -30,8 +46,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
