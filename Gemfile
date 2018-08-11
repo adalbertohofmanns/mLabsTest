@@ -13,7 +13,7 @@ gem 'simple_token_authentication', '~> 1.0'
 
 gem 'sidekiq'
 
-# gem 'devise-async'
+gem 'devise-async'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
