@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_040435) do
+ActiveRecord::Schema.define(version: 2018_08_11_200548) do
 
   create_table "relatives", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 2018_08_11_040435) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
