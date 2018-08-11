@@ -1,5 +1,7 @@
 class Api::V1::RelativesController < Api::V1::ApiController
 
+  acts_as_token_authentication_handler_for User
+  before_action :require_authentication!
   before_action :set_relative, only: [:show, :update, :destroy]
   before_action :require_authorization!, only: [:show, :update, :destroy]
 
